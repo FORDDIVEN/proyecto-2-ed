@@ -9,13 +9,20 @@ using namespace std;
 int main()
 {
     srand(time(NULL));
-    MapDH *dh = new MapDH(9973);
+    MapDH *h = new MapH(9973);
 
     int a;
     cout << "Ingresar numero de palabras: ";
     cin >> a;
     int contador = 0;
+<<<<<<< HEAD
     ifstream f("randomWords.txt");
+=======
+    int falsa;
+    //hola D:
+    ifstream f("randomWords.txt");
+    //Parece que funciono
+>>>>>>> 4ca45e1881cc41da85b8c0dd88c3c35806ae0339
     string palabra;
     contador = 0;
     int aux;
