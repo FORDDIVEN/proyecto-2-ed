@@ -17,7 +17,7 @@ int main()
     int contador = 0;
 
     ifstream f("randomWords.txt");
-    //hola
+    //hola jeje
     string palabra;
     contador = 0;
     int aux;
