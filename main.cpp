@@ -15,9 +15,10 @@ int main()
     cout << "Ingresar numero de palabras: ";
     cin >> a;
     int contador = 0;
-
+    int falsa;
+    //hola D:
     ifstream f("randomWords.txt");
-    //hola probando
+    //Parece que funciono
     string palabra;
     contador = 0;
     int aux;
