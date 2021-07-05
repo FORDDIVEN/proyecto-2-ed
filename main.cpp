@@ -1,6 +1,6 @@
 #include <iostream>
 #include <vector>
-#include "MapDH.h"
+#include "MapH.h"
 #include <fstream>
 #include <ctime>
 
@@ -15,9 +15,7 @@ int main()
     cout << "Ingresar numero de palabras: ";
     cin >> a;
     int contador = 0;
-
     ifstream f("randomWords.txt");
-    //hola probando
     string palabra;
     contador = 0;
     int aux;
@@ -52,7 +50,7 @@ int main()
         }
         int dobleH = dh->at(palabra);
 
-        //cout << "bad: " << bad << " good: " << good << " DH: " << dobleH << endl;
+        //cout << " DH: " << dobleH << endl;
 
         if (contador == a)
         {

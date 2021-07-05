@@ -1,6 +1,6 @@
-#include "MapDH.h"
+#include "MapH.h"
 
-MapDH::MapDH(int n)
+MapH::MapH(int n)
 {
     this->n = n / 2;
     _size = 0;
@@ -9,12 +9,12 @@ MapDH::MapDH(int n)
     this->colisionInsert = 0;
 }
 
-MapDH::~MapDH()
+MapH::~MapH()
 {
     delete[] hashTable;
 }
 
-void MapDH::insert(pair<string, int> entrada)
+void MapH::insert(pair<string, int> entrada)
 {
     int hashing = polinomialHash(entrada.first);
 
@@ -64,7 +64,7 @@ void MapDH::insert(pair<string, int> entrada)
     }
 }
 
-void MapDH::erase(string palabra)
+void MapH::erase(string palabra)
 {
     int revisar = pos(palabra);
     if (revisar != -1)
@@ -79,7 +79,7 @@ void MapDH::erase(string palabra)
     }
 }
 
-int MapDH::at(string palabra) //RETORNA VALOR GUARDADO NO LA POSICION!!
+int MapH::at(string palabra) //RETORNA VALOR GUARDADO NO LA POSICION!!
 {
 
     int hashing = polinomialHash(palabra);
@@ -122,12 +122,12 @@ int MapDH::at(string palabra) //RETORNA VALOR GUARDADO NO LA POSICION!!
     return retorno;
 }
 
-int MapDH::size()
+int MapH::size()
 {
     return _size;
 }
 
-bool MapDH::empty()
+bool MapH::empty()
 {
     if (_size == 0)
         return true;
@@ -135,7 +135,7 @@ bool MapDH::empty()
         return false;
 }
 
-int MapDH::pos(string palabrota) //RETORNA LA POSICION!!
+int MapH::pos(string palabrota) //RETORNA LA POSICION!!
 {
     int hashing = polinomialHash(palabrota);
 
@@ -176,7 +176,7 @@ int MapDH::pos(string palabrota) //RETORNA LA POSICION!!
 
     return retorno;
 }
-int MapDH::polinomialHash(string palabra)
+int MapH::polinomialHash(string palabra)
 {
     int sizeWord = palabra.length();
     int sumHash = 0;
@@ -189,7 +189,7 @@ int MapDH::polinomialHash(string palabra)
     return sumHash;
 }
 
-void MapDH::agrandar()
+void MapH::agrandar()
 {
     n = 2 * n;
     vector<pair<string, int>> *newHash;
@@ -233,23 +233,23 @@ void MapDH::agrandar()
     hashTable = newHash;
 }
 
-int MapDH::superPolinomialHash(int n)
+int MapH::superPolinomialHash(int n)
 {
     int retorno = 7 - (n % 7);
     return retorno;
 }
 
-int MapDH::colisionesInsert()
+int MapH::colisionesInsert()
 {
     return colisionInsert;
 }
 
-int MapDH::colisionesAt()
+int MapH::colisionesAt()
 {
     return colisionAt;
 }
 
-int MapDH::comprimir(int hash)
+int MapH::comprimir(int hash)
 {
     return hash % n;
 }

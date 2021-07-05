@@ -1,5 +1,5 @@
-#ifndef MAPDH_H
-#define MAPDH_H
+#ifndef MAPH_H
+#define MAPH_H
 
 #include <iostream>
 #include <vector>
@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class MapDH
+class MapH
 {
 private:
     int _size;
@@ -22,8 +22,8 @@ private:
     int comprimir(int hash);
 
 public:
-    MapDH(int n);
-    ~MapDH();
+    MapH(int n);
+    ~MapH();
     void insert(pair<string, int> entrada);
     void erase(string palabra);
     int at(string palabra);
