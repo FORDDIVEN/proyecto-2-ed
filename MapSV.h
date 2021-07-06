@@ -1,9 +1,13 @@
+#ifndef MAPSV_H
+#define MAPSV_H
+
 #include <iostream>
 #include <vector>
+#include "Map.h"
 
 using namespace std;
 
-class MapSV
+class MapSV : public Map
 {
 private:
     vector<pair<string, int>> *arreglo;
@@ -19,3 +23,4 @@ public:
     int size();
     bool empty();
 };
+#endif

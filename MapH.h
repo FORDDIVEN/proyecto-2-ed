@@ -4,6 +4,7 @@
 #include <iostream>
 #include <vector>
 #include <math.h>
+#include "Map.h"
 
 using namespace std;
 

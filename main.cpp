@@ -9,15 +9,13 @@ using namespace std;
 int main()
 {
     srand(time(NULL));
-    MapH *h = new MapH(9973);
+    MapH *hashing = new MapH(9973);
 
-    int a;
+    int nWords;
     cout << "Ingresar numero de palabras: ";
-    cin >> a;
+    cin >> nWords;
+
     int contador = 0;
-    ifstream f("randomWords.txt");
-    int falsa;
-    //hola D:
     ifstream f("randomWords.txt");
     string palabra;
     contador = 0;
@@ -31,9 +29,9 @@ int main()
         {
             tupla.first = palabra.substr(0, 5); //tomar desde a hasta b en mi palabra que es de 0 hasta 5 em este caso
         }
-        h->insert(tupla);
+        hashing->insert(tupla);
 
-        if (contador == a)
+        if (contador == nWords)
         {
             break;
         }
@@ -51,20 +49,16 @@ int main()
         {
             palabra = palabra.substr(0, 5); //tomar desde a hasta b en mi palabra que es de 0 hasta 7 em este caso
         }
-        int dobleH = h->at(palabra);
+        int dobleH = hashing->at(palabra);
 
         //cout << " DH: " << dobleH << endl;
 
-        if (contador == a)
+        if (contador == nWords)
         {
             break;
         }
         contador++;
     }
-
-    cout << "Colisiones MapDH" << endl;
-    cout << "Metodo At: " << h->colisionesAt() << " Metodo Insert: " << h->colisionesInsert() << endl;
-    //cout << "" << endl;
 
     return 0;
 }

@@ -2,7 +2,6 @@
 
 MapSV::MapSV()
 {
-
     _size = 0;
     arreglo = new vector<pair<string, int>>;
 }
