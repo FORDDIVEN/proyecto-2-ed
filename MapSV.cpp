@@ -49,6 +49,7 @@ void MapSV::erase(string palabrin)
     {
         arreglo->at(posicion).first = '#';
         arreglo->at(posicion).second = -2;
+        _size--;
     }
 }
 
