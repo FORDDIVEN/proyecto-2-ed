@@ -156,13 +156,14 @@ int MapSV::metodoPalAt(int primero, string palabrin)
 int MapSV::pos(string palabrita)
 {
     //busqueda binaria para encontrar n
-    int posActual;
     int up = arreglo->size() - 1;
     int down = 0;
+    int posActual;
     int buscacion = 0;
 
     while (down <= up)
     {
+
         posActual = (up + down) / 2;
         buscacion = metodoPalAt(posActual, palabrita);
 
