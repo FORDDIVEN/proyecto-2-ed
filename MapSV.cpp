@@ -12,13 +12,13 @@ MapSV::~MapSV()
     delete[] arreglo;
 }
 
-void MapSV::insert(string palabrota)
+void MapSV::insert(pair<string, int> palabrota)
 {
     //meter al ultimo y luego hacer ordenamiento
     //arreglo->push_back(entrada);//como es un vector de pares solo basta con poner el par al ultimo
     int numerin = rand() % 100;
 
-    arreglo->push_back(make_pair(palabrota, numerin));
+    arreglo->push_back(palabrota);
     _size++;
 
     int i = 0;
@@ -56,34 +56,33 @@ void MapSV::erase(string palabrin)
 int MapSV::at(string palabrita)
 {
     //busqueda binaria para encontrar n
-    int posActual = size() / 2;
+    int up = arreglo->size() - 1;
+    int down = 0;
+    int posActual;
     int buscacion = 0;
 
-    while (arreglo->at(posActual).first != palabrita)
+    while (down <= up)
     {
+
+        posActual = (up + down) / 2;
         buscacion = metodoPalAt(posActual, palabrita);
 
+        if (buscacion == 0)
+        {
+            return arreglo->at(posActual).second;
+        }
+
         if (buscacion < 0)
-        {                               ///REVISAR PARA LA DERECHA PORQUE PALABRITA ES MAYOR
-            posActual += posActual / 2; //lo hice yo, mala la cosita
-            //posActual = posActual / 2;
+        { ///REVISAR PARA LA DERECHA PORQUE PALABRITA ES MAYOR
+            down = posActual + 1;
         }
 
         if (buscacion > 0)
         {
-            posActual -= posActual / 2;
+            up = posActual - 1;
         }
     }
-
-    buscacion = metodoPalAt(posActual, palabrita);
-    if (buscacion == 0)
-    {
-        return arreglo->at(posActual).second;
-    }
-    else
-    {
-        return -1;
-    }
+    return -1;
 }
 
 int MapSV::size()
@@ -116,7 +115,7 @@ int MapSV::mayorMenor(int primero, int segundo)
     char original[arreglo->at(primero).first.length()];
     char revisar[arreglo->at(segundo).first.length()];
 
-    int comparar;
+    int comparar = 0;
 
     for (int i = 0; i < arreglo->at(primero).first.length(); ++i)
     {
@@ -129,22 +128,7 @@ int MapSV::mayorMenor(int primero, int segundo)
     }
 
     comparar = strcmp(original, revisar);
-
-    if (comparar < 0)
-    {
-        printf("str1 is less than str2");
-        return comparar;
-    }
-    else if (comparar > 0)
-    {
-        printf("str2 is less than str1");
-        return comparar;
-    }
-    else
-    {
-        printf("str1 is equal to str2");
-        return comparar;
-    }
+    return comparar;
 }
 
 int MapSV::metodoPalAt(int primero, string palabrin)
@@ -166,53 +150,46 @@ int MapSV::metodoPalAt(int primero, string palabrin)
     }
 
     comparar = strcmp(original, revisar);
-
-    if (comparar < 0)
-    {
-        printf("str1 is less than str2");
-        return comparar;
-    }
-    else if (comparar > 0)
-    {
-        printf("str2 is less than str1");
-        return comparar;
-    }
-    else
-    {
-        printf("str1 is equal to str2");
-        return comparar;
-    }
+    return comparar;
 }
 
 int MapSV::pos(string palabrita)
 {
     //busqueda binaria para encontrar n
-    int posActual = size() / 2;
+    int posActual;
+    int up = arreglo->size() - 1;
+    int down = 0;
     int buscacion = 0;
 
-    while (arreglo->at(posActual).first != palabrita)
+    while (down <= up)
     {
+        posActual = (up + down) / 2;
         buscacion = metodoPalAt(posActual, palabrita);
 
+        if (buscacion == 0)
+        {
+            return posActual;
+        }
+
         if (buscacion < 0)
-        {                               ///REVISAR PARA LA DERECHA PORQUE PALABRITA ES MAYOR
-            posActual += posActual / 2; //lo hice yo, mala la cosita
-            //posActual = posActual / 2;
+        { ///REVISAR PARA LA DERECHA PORQUE PALABRITA ES MAYOR
+            down = posActual + 1;
         }
 
         if (buscacion > 0)
         {
-            posActual -= posActual / 2;
+            up = posActual - 1;
         }
     }
-
-    buscacion = metodoPalAt(posActual, palabrita);
-    if (buscacion == 0)
+    return -1;
+}
+void MapSV::imprimir()
+{
+    int si = arreglo->size();
+    for (int i = 0; i < si; i++)
     {
-        return posActual;
-    }
-    else
-    {
-        return -1;
+        cout << "" << arreglo->at(i).first;
+        //cout << " " << arreglo->at(i).second;
+        cout << "----";
     }
 }

@@ -22,7 +22,7 @@ private:
 public:
     MapSV();
     ~MapSV();
-    void insert(string palabrota);
+    void insert(pair<string, int> palabrota);
     int at(string palabrita);
     void erase(string palabrinn);
     int size();
@@ -32,5 +32,6 @@ public:
     int mayorMenor(int primero, int segundo);
     int metodoPalAt(int primero, string palabrin);
     int pos(string palabrin);
+    void imprimir();
 };
 #endif
