@@ -35,8 +35,7 @@ int main()
     //MIDIENDO TIEMPO INSERT PRIMERA IMPLEMENTACION - ARREGLO
 
     clock_t start = clock();
-    for (int i = 0; i < 10; i++)
-    {
+    //for (int i = 0; i < 10; i++){
         contador = 0;
         f.clear();
         f.seekg(0, f.beg);
@@ -58,7 +57,7 @@ int main()
             }
             contador++;
         }
-    }
+    //}
     timeInsert = ((double)clock() - start) / CLOCKS_PER_SEC;
     printf("Tiempo Insert Arreglo: %.10f\n\n", timeInsert / (double)10);
 
@@ -68,8 +67,7 @@ int main()
     //MIDIENDO TIEMPO INSERT SEGUNDA IMPLEMENTACION - HASHING
 
     start = clock();
-    for (int i = 0; i < 10; i++)
-    {
+    //for (int i = 0; i < 10; i++){
         contador = 0;
         f.clear();
         f.seekg(0, f.beg);
@@ -91,7 +89,7 @@ int main()
             }
             contador++;
         }
-    }
+    //}
     timeInsert = ((double)clock() - start) / CLOCKS_PER_SEC;
     printf("Tiempo Insert Hashing: %.10f\n\n", timeInsert / (double)10);
 
@@ -101,8 +99,7 @@ int main()
     //MIDIENDO TIEMPO INSERT TERCERA IMPLEMENTACION - AVL-TREE
 
     start = clock();
-    for (int i = 0; i < 10; i++)
-    {
+    //for (int i = 0; i < 10; i++){
         contador = 0;
         f.clear();
         f.seekg(0, f.beg);
@@ -124,7 +121,7 @@ int main()
             }
             contador++;
         }
-    }
+    //}
     timeInsert = ((double)clock() - start) / CLOCKS_PER_SEC;
     printf("Tiempo Insert AVL-Tree: %.10f\n", timeInsert / (double)10);
 
@@ -136,8 +133,7 @@ int main()
     //MIDIENDO TIEMPO METODO AT PRIMERA IMPLEMENTACION ARREGLO
 
     start = clock();
-    for (int i = 0; i < 10; i++)
-    {
+    //for (int i = 0; i < 10; i++){
         contador = 0;
         f.clear();
         f.seekg(0, f.beg);
@@ -156,7 +152,7 @@ int main()
             }
             contador++;
         }
-    }
+    //}
     timeAt = ((double)clock() - start) / CLOCKS_PER_SEC;
     printf("Tiempo At Arreglo: %.10f\n\n", timeAt / (double)10);
 
@@ -166,8 +162,7 @@ int main()
     //MIDIENDO TIEMPO SEGUNDA IMPLEMENTACION HASHING METODO AT
 
     start = clock();
-    for (int i = 0; i < 10; i++)
-    {
+    //for (int i = 0; i < 10; i++){
         contador = 0;
         f.clear();
         f.seekg(0, f.beg);
@@ -186,7 +181,7 @@ int main()
             }
             contador++;
         }
-    }
+    //}
     timeAt = ((double)clock() - start) / CLOCKS_PER_SEC;
     printf("Tiempo At Hashing: %.10f\n\n", timeAt / (double)10);
 
@@ -196,8 +191,7 @@ int main()
     //MIDIENDO TIEMPO TERCERA IMPLEMENTACION AVL-TREE METODO AT
 
     start = clock();
-    for (int i = 0; i < 10; i++)
-    {
+    //for (int i = 0; i < 10; i++){
         contador = 0;
         f.clear();
         f.seekg(0, f.beg);
@@ -216,7 +210,7 @@ int main()
             }
             contador++;
         }
-    }
+    //}
     timeAt = ((double)clock() - start) / CLOCKS_PER_SEC;
     printf("Tiempo At AVL-Tree: %.10f\n", timeAt / (double)10);
     cout << "----------------------------------------" << endl;

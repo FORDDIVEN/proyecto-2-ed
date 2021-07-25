@@ -54,7 +54,7 @@ void AVLMap::erase(string s){
 }
 
 Nodo* AVLMap::erase(string s, Nodo* nodo){
-	cout<<"F"<<endl;
+	cout<<"F uwu"<<endl;
 }
 
 void AVLMap::printPreOrder(Nodo *root){

@@ -3,7 +3,7 @@
 MapSV::MapSV()
 {
     _size = 0;
-    arreglo = new vector<pair<string, int>>;
+    arreglo = new vector<pair<string, int> >;
     colisionAT = 0;
     colisionINSERT = 0;
 }

@@ -4,7 +4,7 @@ MapH::MapH(int n)
 {
     this->n = n / 2;
     _size = 0;
-    hashTable = new vector<pair<string, int>>(n, make_pair(string(), int()));
+    hashTable = new vector< pair<string, int> >(n, make_pair(string(), int()));
     this->colisionAt = 0;
     this->colisionInsert = 0;
 }
@@ -192,8 +192,8 @@ int MapH::polinomialHash(string palabra)
 void MapH::agrandar()
 {
     n = 2 * n;
-    vector<pair<string, int>> *newHash;
-    newHash = new vector<pair<string, int>>(n, make_pair(string(), int()));
+    vector<pair<string, int> > *newHash;
+    newHash = new vector< pair<string, int> >(n, make_pair(string(), int()));
     int hashing;
     // int inicioHashing = hashing;
 

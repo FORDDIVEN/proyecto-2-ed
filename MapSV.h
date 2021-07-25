@@ -13,7 +13,7 @@ using namespace std;
 class MapSV : public Map
 {
 private:
-    vector<pair<string, int>> *arreglo;
+    vector<pair<string, int> > *arreglo;
     int n;
     int _size;
     int colisionAT;

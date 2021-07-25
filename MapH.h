@@ -13,7 +13,7 @@ class MapH
 private:
     int _size;
     int n;
-    vector<pair<string, int>> *hashTable;
+    vector<pair<string, int> > *hashTable;
     int pos(string palabrota);
     int polinomialHash(string palabra);
     int superPolinomialHash(int n);
