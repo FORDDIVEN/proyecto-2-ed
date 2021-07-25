@@ -9,9 +9,9 @@ using namespace std;
 int main()
 {
     srand(time(NULL));
-    MapH *hashing = new MapH(9973);
-    MapSV *arreglo = new MapSV();
-
+    MapH* hashing = new MapH(9973);
+    MapSV* arreglo = new MapSV();
+    AVLMap* avltree = new AVLMap();
     int nWords;
     cout << "Ingresar numero de palabras: ";
     cin >> nWords;
@@ -33,6 +33,7 @@ int main()
         }
         hashing->insert(tupla);
         arreglo->insert(tupla);
+        avltree->insert(tupla);
 
         if (contador == nWords)
         {
@@ -54,6 +55,7 @@ int main()
         }
         int dobleH = hashing->at(palabra);
         int arreglin = arreglo->at(palabra);
+        int atAvl = avltree->at(palabra);
         //cout << " DH: " << dobleH << endl;
         //cout << " arreglo at: " << arreglin << endl;
 
@@ -64,13 +66,18 @@ int main()
         contador++;
     }
 
+
+
+    //No es analisis de colisiones amigo, es de tiempo, el AVL ni siquiera puede tener colisiones
+
+
+    /*
     cout << "At Hashing: " << hashing->colisionesAt() << endl;
     cout << "Insert Hashing: " << hashing->colisionesAt() << endl;
 
     cout << "At arreglo: " << arreglo->colisionesAt() << endl;
     cout << "Insert arreglo: " << arreglo->colisionesInsert() << endl;
-    //cout << "Elementos arreglo: " << endl;
-    //arreglo->imprimir();
+    */
 
     return 0;
 }

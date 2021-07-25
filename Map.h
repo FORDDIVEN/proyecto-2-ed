@@ -4,6 +4,14 @@
 
 using namespace std;
 
+struct Nodo{
+    pair<string,int> par;        
+	Nodo* leftChild;
+	Nodo* rightChild;
+	int altura;
+};
+
+
 class Map
 {
 public:
